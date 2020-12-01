@@ -1,0 +1,115 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystemMvc\\HMSystemMvc.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystemMvc\\HMSystemMvc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystemMvc\\HMSystemMvc.csproj",
+        "projectName": "HMSystemMvc",
+        "projectPath": "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystemMvc\\HMSystemMvc.csproj",
+        "packagesPath": "C:\\Users\\davin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystemMvc\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\davin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystem\\HMSystem.csproj": {
+                "projectPath": "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystem\\HMSystem.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystem\\HMSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystem\\HMSystem.csproj",
+        "projectName": "HMSystem",
+        "projectPath": "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystem\\HMSystem.csproj",
+        "packagesPath": "C:\\Users\\davin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystem\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\davin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

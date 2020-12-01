@@ -1,0 +1,67 @@
+@model List<HMSystem.Models.Doctor>
+
+<h2 style="text-align:center">Our Doctors</h2> 
+<br>
+<div class="row">
+    @for (int i = 0; i < Model.Count; i++) {
+        if (i % 2 == 0) {
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="@Model[i].ImageUrl" alt="@Model[i].FirstName" style="width:100%"/>
+                    <div class="container">
+                        <h3>@Model[i].FullName</h3>
+                        <p class="specialty">@Model[i].Specialty</p>
+                        <p>@Model[i].Email</p>
+                        <p>@Model[i].PhoneNumber</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    @for (int i = 0; i < Model.Count; i++) {
+        if (i % 2 != 0) {
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="@Model[i].ImageUrl" alt="@Model[i].FirstName" style="width:100%"/>
+                    <div class="container">
+                        <h3>@Model[i].FullName</h3>
+                        <p class="specialty">@Model[i].Specialty</p>
+                        <p>@Model[i].Email</p>
+                        <p>@Model[i].PhoneNumber</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<!--
+    <div class="column">
+        <div class="card">
+            <img src="binder.jpg" alt="Binder" style="width:100%">
+            <div class="container">
+                <h2>Mike Ross</h2>
+                <p class="title">Art Director</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>mike@example.com</p>
+                <p><button class="button">Contact</button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="painter.jpg" alt="Painter" style="width:100%">
+            <div class="container">
+                <h2>John Doe</h2>
+                <p class="title">Designer</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>john@example.com</p>
+                <p><button class="button">Contact</button></p>
+            </div>
+        </div>
+    </div>
+-->
+

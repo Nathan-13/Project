@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hospital Management System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>Harbour Landing Hospital</h1>
+    </div>
+    <div>
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark border-bottom box-shadow mb-3">
+            <div class="container">
+                <!--a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hospital Management System</a-->
+                <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button-->
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Doctor" asp-action="Index">DOCTORS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <!--
+         <footer class="border-top footer text-muted">
+    
+        <div id="top-footer">
+            <div class="container">
+                <div class="footer1 footer">
+                    <p style="text-align: center;">
+                        <strong>
+                            <span style="color: #ffffff; font-size: 12pt; font-family: arial">SITE MAP</span>
+                        </strong>
+                    </p>      
+                    <ul>
+                        <li style="text-align: left;">
+                            <span style="color: #ffffff; font-size: 10pt; font-family: arial">HOME | ABOUT US | DOCTORS | CONTACT US</span>
+                        </li>
+                        <li style="text-align: left;">
+                            <span style="color: #ffffff; font-size: 10pt; font-family: arial">
+                                "SERVICES - &nbsp;Emergency Care & Walk-In | Family Practice Clinics | Specialist Services"
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer2 footer">
+                    <p style="text-align: center;">
+                        <strong>
+                            <span style="color: #ffffff; font-size: 12pt; font-family: arial">SELF-SERVE KIOSK</span>
+                        </strong>
+                    </p>
+                    <ul>
+                        <li style="text-align: left;">
+                            <span style="color: #ffffff; font-size: 10pt; font-family: arial">Physician Schedules (MONTHLY/DAILY)</span>
+                        </li>
+                        <li style="text-align: left;">
+                            <span style="color: #ffffff; font-size: 10pt; font-family: arial">Schedule an Appointment</span>
+                        </li>
+                        <li style="text-align: left;">
+                            <span style="color: #ffffff; font-size: 10pt; font-family: arial">On-Line Check-In</span>
+                        </li>
+                        <li style="text-align: left;">
+                            <span style="color: #ffffff; font-size: 10pt; font-family: arial">Estimated Wait Time</span>
+                        </li>
+                    </ul>  
+                </div>
+
+                <div class="footer2 footer">
+                    <p style="text-align: center;">
+                        <strong>
+                            <span style="color: #ffffff; font-size: 12pt; font-family: arial">ADDRESS</span>
+                        </strong>
+                    </p>
+                    <p style="text-align: center;">
+                        <span style="color: #ffffff; font-size: 10pt; font-family: arial">3001 Albert Street</span>
+                        <br>
+                        <span style="color: #ffffff; font-size: 10pt; font-family: arial">Regina, SK,&nbsp; Canada S4S 3R1</span>
+                        <br>
+                        <span style="color: #ffffff; font-size: 10pt; font-family: arial">TEL: (306) 500 0404</span>
+                        <br>
+                        <span style="color: #ffffff; font-size: 10pt; font-family: arial">FAX: (306) 500 0407</span>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    -->   
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - HMSystemMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+        
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
