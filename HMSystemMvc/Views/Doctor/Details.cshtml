@@ -1,0 +1,39 @@
+@model HMSystem.Models.Doctor
+
+
+<div>
+    <div>
+        <img src="@Model.ImageUrl" class="img-thumbnail" alt="@Model.FirstName" width="300" height="300"/>
+    </div>
+    <br>
+    <br>
+    <dl class="row">
+        <dt class="col-sm-3">Full Name</dt>
+        <dd class="col-sm-9">@Model.FullName</dd>
+
+        <dt class="col-sm-3">Doctor Identification</dt>
+        <dd class="col-sm-9">@Model.DoctorId</dd>
+
+        <dt class="col-sm-3">Specialty</dt>
+        <dd class="col-sm-9">@Model.Specialty</dd>
+
+        <dt class="col-sm-3">Phone number</dt>
+        <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+        <dt class="col-sm-3">Email Address</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
+
+        <dt class="col-sm-3">Number of Patient</dt>
+        <dd class="col-sm-9">@Model.NumberOfPatient</dd>
+
+        <dt class="col-sm-3">Address</dt>
+        <dd class="col-sm-9">@Model.Address</dd>
+
+    </dl>
+</div>
+<hr/>
+<br>
+ <div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-doctorId="@Model.DoctorId">Edit Doctor</a>
+    <a class="btn btn-primary" asp-action="Index">View Doctors</a>
+</div>

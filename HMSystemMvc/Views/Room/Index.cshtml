@@ -1,0 +1,38 @@
+@model List<HMSystem.Models.Room>
+
+<div class="container">
+  <h4>Room List</h4>         
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">RoomId</th>
+                <th scope="col">Room Location</th>
+                <th scope="col">Room Is Booked</th>
+                <th scope="col">Room Status</th>
+                <th scope="col">Room Is Clean</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++) {
+                <tr>
+                    <td>@Model[i].RoomId</td>
+                    <td>@Model[i].RoomLocation</td>
+                    <td>@Model[i].IsRoomBooked</td>
+                    <td>@Model[i].RoomStatus</td>
+                    <td>@Model[i].RoomIsClean</td>
+                    <td><a class="btn btn-outline-dark" asp-action="Details" asp-route-roomId="@Model[i].RoomId">Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br>
+    <div>
+        <p>Note, E - room empty, O - room occupied with patient, Y - yes room is clean, and N - room is not clean.</p>
+    </div>
+    <br>
+    <div>
+        <a class="btn btn-primary" asp-action="Form" >Add Room</a>
+    </div>
+</div>
+<br>

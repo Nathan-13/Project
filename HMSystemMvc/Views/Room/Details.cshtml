@@ -1,0 +1,31 @@
+@model HMSystem.Models.Room
+
+<div>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-3">RoomId</dt>
+        <dd class="col-sm-9">@Model.RoomId</dd>
+
+        <dt class="col-sm-3">Room Location</dt>
+        <dd class="col-sm-9">@Model.RoomLocation</dd>
+
+        <dt class="col-sm-3">Is Room Booked</dt>
+        <dd class="col-sm-9">@Model.IsRoomBooked/dd>
+
+        <dt class="col-sm-3">Room Status</dt>
+        <dd class="col-sm-9">@Model.RoomStatus</dd>
+
+        <dt class="col-sm-3">Room Is Clean</dt>
+        <dd class="col-sm-9">@Model.RoomIsClean</dd>
+
+    </dl>
+    <hr/>
+    <div>
+        <p>Note, E - room empty, O - room occupied with patient, Y - yes room is clean, and N - room is not clean.</p>
+    </div>
+</div>
+<br>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-roomId="@Model.RoomId">Edit Room</a>
+    <a class="btn btn-primary" asp-action="Index">View Rooms</a>
+</div>

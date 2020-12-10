@@ -32,24 +32,84 @@ namespace HMSystemMvc.Controllers
             return View();
         }
 
+        public IActionResult Details(Guid doctorId) {
+            var doctor = _hospital.GetDoctor(doctorId);
+            return View(doctor);
+        }
+
+        public IActionResult Edit(Guid doctorId) {
+            //Get doctor from hosiptal system
+            var doctor = _hospital.GetDoctor(doctorId);
+
+            // Build the view Models
+            var doctorViewModel = new DoctorViewModel() {
+                FirstName = doctor.FirstName,
+                LastName = doctor.LastName,
+                Address = doctor.Address,
+                Specialty = doctor.Specialty,
+                Email = doctor.Email,
+                PhoneNumber = doctor.PhoneNumber,
+                ImageUrl = doctor.ImageUrl,
+            };
+
+            // Send the view Model
+            ViewBag.IsEditing = true;
+            return View("Form", doctorViewModel);
+        }
+
+        public IActionResult Form() {
+            // var bookToCreate = new BookViewModel() {
+            //     Id = Guid.NewGuid()
+            // };
+            ViewBag.IsEditing = false;
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Create(DoctorViewModel newDoctor) {
 
             if (ModelState.IsValid) {
-                var doctorToCreate = new Doctor() {
+                var doctorToCreate = new Doctor(newDoctor.FirstName, newDoctor.LastName, newDoctor.Specialty, 
+                                                newDoctor.PhoneNumber, newDoctor.Address, newDoctor.Email, 0, newDoctor.ImageUrl) {
                     FirstName = newDoctor.FirstName,
                     LastName = newDoctor.LastName,
                     Address = newDoctor.Address,
                     Specialty = newDoctor.Specialty,
                     Email = newDoctor.Email,
                     PhoneNumber = newDoctor.PhoneNumber,
-                    ImageUrl = newDoctor.ImageUrl
+                    ImageUrl = newDoctor.ImageUrl,
+                    DoctorId = Guid.NewGuid(),
+                    IsDoctorBooked = false
                 };
                 _hospital.AddNewDoctor(doctorToCreate);
 
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             } else {
                 return View("Form", newDoctor);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Update(DoctorViewModel updatedDoctor) {
+
+            if (ModelState.IsValid) {
+                var doctor = new Doctor(updatedDoctor.FirstName, updatedDoctor.LastName, updatedDoctor.Specialty, 
+                                                updatedDoctor.PhoneNumber,updatedDoctor.Address, updatedDoctor.Email, 0, updatedDoctor.ImageUrl) {
+                    FirstName = updatedDoctor.FirstName,
+                    LastName = updatedDoctor.LastName,
+                    Address = updatedDoctor.Address,
+                    Specialty =updatedDoctor.Specialty,
+                    Email = updatedDoctor.Email,
+                    PhoneNumber = updatedDoctor.PhoneNumber,
+                    ImageUrl = updatedDoctor.ImageUrl,
+                    DoctorId = Guid.NewGuid(),
+                    IsDoctorBooked = false
+                };
+                _hospital.UpdateDoctor(doctor);
+
+                return RedirectToAction("Index");
+            } else {
+                return View("Form", updatedDoctor);
             }
         }
         

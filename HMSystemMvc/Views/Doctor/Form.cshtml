@@ -1,7 +1,7 @@
 @model DoctorViewModel
 
 @{
-    string pageTitle = "New Doctor";
+    string pageTitle = "Add Doctor";
     string action = "Create";
 
     if (ViewBag.IsEditing == true) {
@@ -10,7 +10,6 @@
         action = "Update";
     }
 }
-
 
 <div>
     <h2>@pageTitle</h2>
@@ -38,19 +37,23 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="Email">Email</label>
-                    <input type="email" class="form-control" id="Email">
+                    <input type="email" class="form-control" id="Email" placeholder="paul.painter@hlmclinic.org">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="PhoneNumber">Phone Number</label>
-                    <input type="number" class="form-control" id="PhoneNumber">
+                    <input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" value="13065734562" id="PhoneNumber">
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="ImageUrl">Image Link</label>
+                <input type="text" class="form-control" id="ImageUrl" placeholder="https://i.ibb.co/cxhV0p2/painter.jpg">
             </div>
             <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>
     <br/>
     <div>
-        <a asp-action="Index">Our Doctors</a>
+        <a class="btn btn-primary" asp-action="Index">Our Doctors</a>
     </div>
 </div>
 

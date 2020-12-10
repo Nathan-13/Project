@@ -41,3 +41,11 @@ C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\
 C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Index.cshtml.g.cs
 C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Form.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Index.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Details.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Details.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Form.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Room\Index.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Room\Details.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Room\Form.cshtml.g.cs
+C:\Users\davin\dev\comit_sep20\HMSystemFull\HMSystemMvc\obj\Debug\netcoreapp3.1\Razor\Views\Bill\Create.cshtml.g.cs
