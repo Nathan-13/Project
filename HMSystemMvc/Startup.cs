@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 using HMSystem;
 using HMSystem.Models;
@@ -22,28 +23,34 @@ namespace HMSystemMvc
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get;}
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {  
             services.AddControllersWithViews();
-
-            // Dependency injection
-            var patientStorage = new PatientStorageList();
-            var roomStorage = new RoomStorageList();
-            var doctorStorage = new DoctorStorageList();
-            var billStorage = new BillStorageList();
             
-            var hospital = new HospitalSystem(patientStorage, roomStorage, doctorStorage, billStorage, 7);
+            services.AddOptions();
 
-            services.AddSingleton<HospitalSystem>(hospital); 
+            string connectionString = "Host=isilo.db.elephantsql.com;Port=5432;Database=lcmsaopz;Username=lcmsaopz;Password=postgres://lcmsaopz:qx5TIaMMUVoOoKgRNwHK0KzDG-0u7B9W@isilo.db.elephantsql.com:5432/lcmsaopz";
+            services.AddDbContext<HospitalContext>(options => 
+                options.UseNpgsql(connectionString));
+
+         
+            
+            services.AddScoped<IStoreDoctor, DoctorStorageEF>();
+            services.AddScoped<IStorePatient, PatientStorageEF>();
+            services.AddScoped<IStoreBill, BillStorageEF>();
+            services.AddScoped<IStoreRoom, RoomStorageEF>();
+            services.AddScoped<HospitalSystem>();
+
+            // services.AddOptions();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
+        {               
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

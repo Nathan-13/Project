@@ -26,7 +26,7 @@ namespace HMSystemMvc.Models
         public DateTime DateOfBirth { get; set; }
 
         [Required]
-        public string Illness { get; set; }
+        public string Symptom { get; set; }
 
         [Required]
         public DateTime DateAdmitted { get; set; }

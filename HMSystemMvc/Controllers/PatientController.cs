@@ -49,7 +49,7 @@ namespace HMSystemMvc.Controllers
                 PhoneNumber = patient.PhoneNumber,
                 Address = patient.Address,
                 Gender = patient.Gender,
-                Illness = patient.Illness
+                Symptom = patient.Symptom
             };
             // Send the view model
             ViewBag.IsEditing = true;
@@ -65,12 +65,12 @@ namespace HMSystemMvc.Controllers
         public IActionResult Create(PatientViewModel newPatient) {
             if(ModelState.IsValid) {
                 var patientToCreate = new Patient(newPatient.Title, newPatient.FirstName, newPatient.LastName, newPatient.DateOfBirth, newPatient.PhoneNumber,
-                newPatient.Illness, newPatient.Address, newPatient.DateAdmitted, newPatient.Gender) {
+                newPatient.Symptom, newPatient.Address, newPatient.DateAdmitted, newPatient.Gender) {
                     FirstName = newPatient.FirstName,
                     LastName = newPatient.LastName,
                     DateOfBirth = newPatient.DateOfBirth,
                     Gender = newPatient.Gender,
-                    Illness = newPatient.Illness,
+                    Symptom = newPatient.Symptom,
                     Address = newPatient.Address,
                     DateAdmitted = newPatient.DateAdmitted,
                     IsCheckedOut = false,
@@ -88,13 +88,13 @@ namespace HMSystemMvc.Controllers
         public IActionResult Update(PatientViewModel updatedPatient) {
             if(ModelState.IsValid) {
                 var patient = new Patient(updatedPatient.Title, updatedPatient.FirstName, updatedPatient.LastName, updatedPatient.DateOfBirth, 
-                updatedPatient.PhoneNumber, updatedPatient.Address, updatedPatient.Illness, updatedPatient.DateAdmitted, updatedPatient.Gender) {
+                updatedPatient.PhoneNumber, updatedPatient.Address, updatedPatient.Symptom, updatedPatient.DateAdmitted, updatedPatient.Gender) {
                     FirstName = updatedPatient.FirstName,
                     LastName = updatedPatient.LastName,
                     DateOfBirth = updatedPatient.DateOfBirth,
                     Gender = updatedPatient.Gender,
                     Address = updatedPatient.Address,
-                    Illness = updatedPatient.Illness,
+                    Symptom = updatedPatient.Symptom,
                     DateAdmitted = updatedPatient.DateAdmitted,
                     MedicationFees = updatedPatient.MedicationFees,
                     LabFees = updatedPatient.LabFees,

@@ -14407,6 +14407,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystemMvc\\Views\\Bill\\Index.cshtml",
+      "TargetPath": "Views\\Bill\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\davin\\dev\\comit_sep20\\HMSystemFull\\HMSystemMvc\\Views\\Patient\\Form.cshtml",
       "TargetPath": "Views\\Patient\\Form.cshtml",
       "FileKind": "mvc"

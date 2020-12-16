@@ -46,7 +46,7 @@ namespace HMSystemMvc.Controllers
                 FirstName = doctor.FirstName,
                 LastName = doctor.LastName,
                 Address = doctor.Address,
-                Specialty = doctor.Specialty,
+                Specialization = doctor.Specialization,
                 Email = doctor.Email,
                 PhoneNumber = doctor.PhoneNumber,
                 ImageUrl = doctor.ImageUrl,
@@ -69,16 +69,17 @@ namespace HMSystemMvc.Controllers
         public IActionResult Create(DoctorViewModel newDoctor) {
 
             if (ModelState.IsValid) {
-                var doctorToCreate = new Doctor(newDoctor.FirstName, newDoctor.LastName, newDoctor.Specialty, 
+                var doctorToCreate = new Doctor(newDoctor.FirstName, newDoctor.LastName, newDoctor.Specialization, 
                                                 newDoctor.PhoneNumber, newDoctor.Address, newDoctor.Email, 0, newDoctor.ImageUrl) {
                     FirstName = newDoctor.FirstName,
                     LastName = newDoctor.LastName,
                     Address = newDoctor.Address,
-                    Specialty = newDoctor.Specialty,
+                    Specialization = newDoctor.Specialization,
                     Email = newDoctor.Email,
                     PhoneNumber = newDoctor.PhoneNumber,
                     ImageUrl = newDoctor.ImageUrl,
                     DoctorId = Guid.NewGuid(),
+                    Symptoms = new List<Symptom>(),
                     IsDoctorBooked = false
                 };
                 _hospital.AddNewDoctor(doctorToCreate);
@@ -93,12 +94,12 @@ namespace HMSystemMvc.Controllers
         public IActionResult Update(DoctorViewModel updatedDoctor) {
 
             if (ModelState.IsValid) {
-                var doctor = new Doctor(updatedDoctor.FirstName, updatedDoctor.LastName, updatedDoctor.Specialty, 
+                var doctor = new Doctor(updatedDoctor.FirstName, updatedDoctor.LastName, updatedDoctor.Specialization, 
                                                 updatedDoctor.PhoneNumber,updatedDoctor.Address, updatedDoctor.Email, 0, updatedDoctor.ImageUrl) {
                     FirstName = updatedDoctor.FirstName,
                     LastName = updatedDoctor.LastName,
                     Address = updatedDoctor.Address,
-                    Specialty =updatedDoctor.Specialty,
+                    Specialization =updatedDoctor.Specialization,
                     Email = updatedDoctor.Email,
                     PhoneNumber = updatedDoctor.PhoneNumber,
                     ImageUrl = updatedDoctor.ImageUrl,

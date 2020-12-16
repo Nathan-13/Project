@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+
+using HMSystem.Models;
 
 namespace HMSystemMvc.Models
 {
@@ -20,13 +23,16 @@ namespace HMSystemMvc.Models
         public long PhoneNumber { get; set; }
         
         [Required]
-        public string Specialty { get; set; }
+        public string Specialization { get; set; }
 
         [Required]
         public string Email { get; set; }
 
         [Required]
         public string ImageUrl { get; set; }
+        
+        [Required]
+        public List<Symptom> Symptoms { get; set; }
 
     }
 }
