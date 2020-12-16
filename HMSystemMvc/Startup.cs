@@ -23,14 +23,13 @@ namespace HMSystemMvc
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get;}
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {  
             services.AddControllersWithViews();
-            
-            services.AddOptions();
+            services.AddRazorPages();
 
             string connectionString = "Host=isilo.db.elephantsql.com;Port=5432;Database=lcmsaopz;Username=lcmsaopz;Password=qx5TIaMMUVoOoKgRNwHK0KzDG-0u7B9W";
             services.AddDbContext<HospitalContext>(options => 
@@ -48,7 +47,13 @@ namespace HMSystemMvc
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {               
+        {
+             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope()) {
+                using (var context = serviceScope.ServiceProvider.GetService<HospitalContext>()) {
+                    context.Database.Migrate();
+                }
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -71,6 +76,7 @@ namespace HMSystemMvc
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
