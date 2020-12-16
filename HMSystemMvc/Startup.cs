@@ -32,11 +32,9 @@ namespace HMSystemMvc
             
             services.AddOptions();
 
-            string connectionString = "Host=isilo.db.elephantsql.com;Port=5432;Database=lcmsaopz;Username=lcmsaopz;Password=postgres://lcmsaopz:qx5TIaMMUVoOoKgRNwHK0KzDG-0u7B9W@isilo.db.elephantsql.com:5432/lcmsaopz";
+            string connectionString = "Host=isilo.db.elephantsql.com;Port=5432;Database=lcmsaopz;Username=lcmsaopz;Password=qx5TIaMMUVoOoKgRNwHK0KzDG-0u7B9W";
             services.AddDbContext<HospitalContext>(options => 
-                options.UseNpgsql(connectionString));
-
-         
+                options.UseNpgsql(connectionString, b => b.MigrationsAssembly("HMSystemMvc")));
             
             services.AddScoped<IStoreDoctor, DoctorStorageEF>();
             services.AddScoped<IStorePatient, PatientStorageEF>();
